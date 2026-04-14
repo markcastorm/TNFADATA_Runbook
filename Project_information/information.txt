@@ -1,0 +1,385 @@
+i believe its a new dawn new begining its a new run book  howp you have gon through the previous code see how good it its and its architecture 
+(D:\Projects\SIMBA-RUNBOOKS\Runbook_RELPRCLVLINDX\
+"D:\Projects\SIMBA-RUNBOOKS\Runbook_RELPRCLVLINDX\config.py"
+"D:\Projects\SIMBA-RUNBOOKS\Runbook_RELPRCLVLINDX\extractor.py"
+"D:\Projects\SIMBA-RUNBOOKS\Runbook_RELPRCLVLINDX\file_generator.py"
+"D:\Projects\SIMBA-RUNBOOKS\Runbook_RELPRCLVLINDX\main.py"
+"D:\Projects\SIMBA-RUNBOOKS\Runbook_RELPRCLVLINDX\orchestrator.py"
+"D:\Projects\SIMBA-RUNBOOKS\Runbook_RELPRCLVLINDX\scraper.py"
+"D:\Projects\SIMBA-RUNBOOKS\Runbook_RELPRCLVLINDX\README.md")
+) analyze the scripts weel we gona use the architecture  
+but here are some aditional instructions(D:\Projects\SIMBA-RUNBOOKS\Runbook_RELPRCLVLINDX\Project_information\PIPELINE_PROMPT.md)
+
+now weare getting started on a new runnbook(D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\TNFADATA_Runbook.xlsx) its a .xlsx file
+Here is the csv version (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\TNFADATA_DATA_20221116 - Sheet1.csv) of the manual data
+HEre is the xlsx version (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\TNFADATA_DATA_20221116.xlsx)
+Meta  file (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\TNFADATA_META_20221116.xlsx)
+
+analyze them first before we started 
+thistime we will  have the config.py  add the necessary collumns mapinng since the sub headers and headers in the manual data will be exactly the way they are to every output and in the exact arrangemen  since they are absolute unless other wise
+remember they are absolute so store them in the config .py
+(D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\TNFADATA_DATA_20221116 - Sheet1.csv)  analyze these files verry keenly they are verry important  lets get started
+
+lets first start with the scraper.py 
+we need to  visit this link using selenium stealth ensure we mimic human clicks   and winreg too ensure it works for linux too other wise if it cant dont use it also ensure also works for headles true too
+lets visit this link
+(https://eng.stat.gov.tw/np.asp?ctNode=1553)
+i gues we have cloudfare protection on the site not sure houw wa re gona manage it (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\image2.png)
+you can see its the first thing we meet with when you launch the site you can use proper headeers and solve the claudfare if possible some times it wont appear so be sure
+so stealthynes is quite important  once the site loads past the cloudfare it looks like this (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\image3.png)
+here is a sample html (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\sample.txt) so we are going to scroll to this section (<div class="in"><div class="hd"><div class="in"><h2 data-index="0">		<span><a title="Statistics from DGBAS">Statistics from DGBAS</a></span></h2></div></div><div class="ct"><div class="in"><ul aria-label="主計總處統計專區" role="menu">
+        <li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_01.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2325" title="Price ">Price </a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="News.aspx?n=2326&amp;sms=10860" title="Outline">Outline</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2327" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2328&amp;sms=10862" title="Publications">Publications</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2329&amp;sms=10854" title="Press information">Press information</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2330&amp;sms=10864" title="FAQ">FAQ</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2331" title="Contact Us">Contact Us</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More Price">More Price </a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_02.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2332" title="National Accounts ">National Accounts </a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2333" title="Outline">Outline</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2334" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2336&amp;sms=10866" title="Publications">Publications</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2337&amp;sms=10854" title="Press information">Press information</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2338&amp;sms=10868" title="FAQ">FAQ</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2339" title="Contact Us">Contact Us</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More National Accounts">More National Accounts </a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_03.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2343" title="Environmental-Economic Account">Environmental-Economic Account</a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2347" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2356" title="Contact Us">Contact Us</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More Environmental-Economic Account">More Environmental-Economic Account</a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_04.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2357" title="The Survey of Family Income and Expenditure">The Survey of Family Income and Expenditure</a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2358" title="Outline">Outline</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=4218&amp;sms=11711" title="Report on The Survey of Family Income and Expenditure">Report on The Survey of Family Income and Expenditure</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=4219&amp;sms=11712" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2361&amp;sms=10872" title="Commonly used all previous years material">Commonly used all previous years material</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2362&amp;sms=11616" title="FAQ">FAQ</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2363" title="Survey of Family Income and Expenditure Request Form">Survey of Family Income and Expenditure Request Form</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2364" title="Contact Us">Contact Us</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More The Survey of Family Income and Expenditure">More The Survey of Family Income and Expenditure</a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_05.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2365" title="Labor Force">Labor Force</a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="News.aspx?n=2366&amp;sms=10873" title="Outline">Outline</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2368&amp;sms=10874" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2369&amp;sms=10854" title="Press information">Press information</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2370&amp;sms=10876" title="FAQ">FAQ</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2371" title="Contact Us">Contact Us</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More Labor Force">More Labor Force</a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_06.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2372" title="Earnings and Productivity ">Earnings and Productivity </a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="News.aspx?n=2373&amp;sms=10877" title="Outline">Outline</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=4579&amp;sms=11752" title="The Median and Distribution of Earnings">The Median and Distribution of Earnings</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2375&amp;sms=10878" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=4014&amp;sms=11714" title="E-Book">E-Book</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2377&amp;sms=10854" title="Press Information">Press Information</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2378&amp;sms=10880" title="FAQ">FAQ</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2379" title="Contact Us">Contact Us</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More Earnings and Productivity">More Earnings and Productivity </a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_07.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2380" title="Social Indicators">Social Indicators</a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2381" title="Outline">Outline</a></span></li>
+                                <li role="presentation">		<span><a href="cl.aspx?n=2383" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2387&amp;sms=10883" title="FAQ">FAQ</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2388" title="Contact Us">Contact Us</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More Social Indicators">More Social Indicators</a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_08.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2392" title="Industry and Service Census">Industry and Service Census</a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="News.aspx?n=2393&amp;sms=10884" title="Outline">Outline</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2394&amp;sms=10885" title="Statistical Analysis">Statistical Analysis</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2395&amp;sms=10886" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=4644&amp;sms=11770" title="E-book">E-book</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2396&amp;sms=10887" title="FAQ">FAQ</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2397" title="Contact Us">Contact Us</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More Industry and Service Census">More Industry and Service Census</a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_09.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2398" title="Population and Housing Census">Population and Housing Census</a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="News.aspx?n=2399&amp;sms=10888" title="Outline">Outline</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2400&amp;sms=11716" title="Statistical Analysis">Statistical Analysis</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2401&amp;sms=10889" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2402&amp;sms=10890" title="FAQ">FAQ</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2403" title="Contact Us">Contact Us</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2404" title="News">News</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More Population and Housing Census">More Population and Housing Census</a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_10.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2405" title="Agriculture, Forestry, Fishery and Animal Husbandry Census">Agriculture, Forestry, Fishery and Animal Husbandry Census</a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="News.aspx?n=2406&amp;sms=10891" title="Outline">Outline</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2407&amp;sms=10892" title="Statistical Analysis">Statistical Analysis</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2408&amp;sms=10893" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2409&amp;sms=10894" title="FAQ">FAQ</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2410" title="Contact Us">Contact Us</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More Agriculture, Forestry, Fishery and Animal Husbandry Census">More Agriculture, Forestry, Fishery and Animal Husbandry Census</a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_11.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2411" title="National Wealth Statistics">National Wealth Statistics</a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2412" title="Outline">Outline</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2414&amp;sms=10895" title="Interactive Visualizations">Interactive Visualizations</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2415" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2416&amp;sms=10854" title="Press Information">Press Information</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2417&amp;sms=10897" title="FAQ">FAQ</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2418" title="Contact Us">Contact Us</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More National Wealth Statistics">More National Wealth Statistics</a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_12.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2427" title="I/O Tables">I/O Tables</a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="News.aspx?n=2428&amp;sms=10902" title="Outline">Outline</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2429&amp;sms=10903" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2430&amp;sms=10904" title="FAQ">FAQ</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2431" title="Contact Us">Contact Us</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More I/O Tables">More I/O Tables</a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_13.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2432" title="Others">Others</a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="cl.aspx?n=2433" title="Manpower Utilization Survey">Manpower Utilization Survey</a></span></li>
+                                <li role="presentation">		<span><a href="cl.aspx?n=2437" title="Women's Marriage, Fertility and Employment Survey">Women's Marriage, Fertility and Employment Survey</a></span></li>
+                                <li role="presentation">		<span><a href="cl.aspx?n=4555" title="Job Vacancy and Employee Compensation Survey">Job Vacancy and Employee Compensation Survey</a></span></li>
+                                <li role="presentation">		<span><a href="cl.aspx?n=2449" title="Street Vendors Survey">Street Vendors Survey</a></span></li>
+                                <li role="presentation">		<span><a href="cl.aspx?n=2454" title="Superior Farm Households Statistics">Superior Farm Households Statistics</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More Others">More Others</a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li aria-haspopup="true" role="presentation">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_14.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=4017" title="Statistics Regulation and Standard">Statistics Regulation and Standard</a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="News.aspx?n=3888&amp;sms=10975" title="Statistical Agencies">Statistical Agencies</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=4141" title="Statistical Classification of Industries">Statistical Classification of Industries</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=4214" title="Standard Occupational Classification">Standard Occupational Classification</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=4216&amp;sms=10960" title="FAQ">FAQ</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More Statistics Regulation and Standard">More Statistics Regulation and Standard</a></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div></div></div>)   i dealy we can search dynamically for (Natinal Wealth Statistics) wich will leadus to a component like this (<li aria-haspopup="true" role="presentation" class="">
+            <div class="div">
+                <div class="content">
+                    <div class="img" style="background-image: url('./Images/subject_11.png');">
+                        <br>
+                    </div>
+                    <div class="essay">
+                        <div class="caption">		<span><a href="cl.aspx?n=2411" title="National Wealth Statistics">National Wealth Statistics</a></span></div>
+                        <div class="list">
+                            <ul>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2412" title="Outline">Outline</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2414&amp;sms=10895" title="Interactive Visualizations">Interactive Visualizations</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2415" title="Statistical Tables">Statistical Tables</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2416&amp;sms=10854" title="Press Information">Press Information</a></span></li>
+                                <li role="presentation">		<span><a href="News.aspx?n=2417&amp;sms=10897" title="FAQ">FAQ</a></span></li>
+                                <li role="presentation">		<span><a href="cp.aspx?n=2418" title="Contact Us">Contact Us</a></span></li>
+                            </ul>
+                        </div>
+                        <div class="label"><a href="cl.aspx?n=2324" title="More National Wealth Statistics">More National Wealth Statistics</a></div>
+                    </div>
+                </div>
+            </div>
+        </li>) like this we just click the the link dynamicaly it will lead us to this page be fore that something to factor in is that when you hovere over the national wealth it give  a small modal or  card as you ca see  we just ensure we navigate to the link to the national wealth (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\image4.png)
+
+        clicking the link will lead us to this page (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\image5.png) here is the sample.html(D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\sample2.txt) here we look for statistical tables dynamicaly (<li data-index="3"> <div class="list-text content-list" data-index="3" data-type="0"><div class="in"><div class="hd"><div class="in"><div data-index="0">		<span><a href="cp.aspx?n=2415" title="Statistical Tables" class="aspx">Statistical Tables</a></span></div></div></div><div class="ct"><div class="in"></div></div></div></div></li>)
+        and click it lead us to the statistical page (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\image6.png)
+        here is the sample.html (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\sample3.txt)
+the next step is to look for (Assets Structure for Households Sector) dynamicaly (<p>&nbsp; Table 6 Assets Structure for Households Sector &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="https://ws.dgbas.gov.tw/001/Upload/464/relfile/10320/2517/table6e112.xlsx" class="xlsx" title="[open a new window](EXCEL)" target="_blank">(EXCEL)</a> <a href="https://ws.dgbas.gov.tw/001/Upload/464/relfile/10320/2517/table6e112.ods" class="ods" title="[open a new window](ODS)" target="_blank">(ODS)</a></p>)
+here we click on the Excel link it will trigger the excel file download on a new tab so factor that in too (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\table6e112.xlsx)
+here is a sample of the downloaded file  which will be saved in the download folder with timestamped subfolders for every run the passer will  scann the the file dynamically as you notice we have tabs for different years (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\image7.png)
+wem scann the tabs dynamically  by default we ar supposed to pick the latest year on the list anless the config is set with the specific year   so right now our latest year is 2023 based on the downloaded file  we scann the full  tab identify the possitions the rows and collumns of how everything is a rranged dynamicaly be cause it changes  sometime no hardcording possitions  based on the runbook under ("Assets 
+(Land evaluated at current land valuee)"	) we are supposed to pick the realeastate  and House hold equipment  (Amount and composition values  as illuxtrated (D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\image8.png)) SO ANALYZE THE TABS YOU CAN SEE I MANUALY SCRAPED THE DATA AND MAPPED IT TO APROPRIATE HEADERS  and subheaders in the out put file 
+(D:\Projects\SIMBA-RUNBOOKS\TNFADATA_Runbook\Project_information\TNFADATA_DATA_20221116.xlsx) its just as simple as that we need the output to go to the output folder with timestamped subfolders for every run and a lates folder holding the latest files on every run  
+i think i have covered most of the parts lets get to work dont waste tokens be verry efficient  no hard cording be as dynamic as possible 
+
+
+
+
+
+
+
+
+
