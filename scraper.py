@@ -106,6 +106,13 @@ def _build_driver(download_dir):
         if config.HEADLESS_MODE:
             options.add_argument('--headless=new')
             options.add_argument('--disable-gpu')
+            # Patch UA to remove "HeadlessChrome" — Cloudflare blocks on this
+            chrome_ua_ver = chrome_ver or '131'
+            options.add_argument(
+                f'--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+                f'AppleWebKit/537.36 (KHTML, like Gecko) '
+                f'Chrome/{chrome_ua_ver}.0.0.0 Safari/537.36'
+            )
 
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')

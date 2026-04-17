@@ -27,7 +27,7 @@ DATASET_NAME  = 'TNFADATA'
 COUNTRY_CODE  = 'TWN'
 
 # ── Browser ───────────────────────────────────────────────────────────────────
-HEADLESS_MODE       = False
+HEADLESS_MODE       = True
 WAIT_TIMEOUT        = 60
 PAGE_LOAD_DELAY     = 5
 DOWNLOAD_WAIT_TIME  = 120
